@@ -6,10 +6,10 @@ It starts from 2 git repos, one for the sources and one for the package info
 As a pre-requisite, you need docker installed and running, and a user that has access to it
 Once you have that, you can invoke the script as follows:
 
-> $ ./gen_deb.sh <pkg-url\> <src-url\> 
+> $ ./gen_deb.sh <pkg-url\> <pkg-branch\> <src-url\> <src-branch\>
 
 For example, to build from the linaro sources in github:
-> $ ./gen_deb.sh https://github.com/linaro/pkg-lava-server.git https://github.com/linaro/lava-server.git
+> $ ./gen_deb.sh https://github.com/linaro/pkg-lava-server.git master https://github.com/linaro/lava-server.git master
 
 This will generate the following deb files in the *build* subdirectory:
 ````
@@ -22,5 +22,3 @@ Please note that it leaves files strewn around with root ownership as a side-eff
 
 ### TODO
  - Generates a hardcoded version number at the moment
- - only picks up master from both repos, should have branch/tag configuration for each one.
- 

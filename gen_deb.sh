@@ -3,9 +3,11 @@
 # Requires docker installed
 
 PKG_REPO=${1:-"https://github.com/cdaudt/pkg-lava-server.git"}
-SRC_REPO=${2:-"https://github.com/cdaudt/lava-server.git"}
+PKG_BRANCH=${2:-master}
+SRC_REPO=${3:-"https://github.com/cdaudt/lava-server.git"}
+SRC_BRANCH=${4:-master}
 
-echo "Using ${PKG_REPO} for packaging and ${SRC_REPO} for sources"
+echo "Using ${PKG_REPO}:${PKG_BRANCH} for packaging and ${SRC_REPO}:${SRC_BRANCH} for sources"
 
 if [ -d build ]
 then
@@ -19,14 +21,13 @@ docker build -t build-lava-on-debian dock
 mkdir -p build
 pushd build
   # clone the necessary repos
-  # TODO: add branch/tag for each
   if [ ! -d pkg ]
   then
-    git clone ${PKG_REPO} pkg
+    git clone -b ${PKG_BRANCH} ${PKG_REPO} pkg
   fi
   if [ ! -d src ]
   then
-    git clone ${SRC_REPO} src
+    git clone -b ${SRC_BRANCH} ${SRC_REPO} src
   fi
   pushd src
     tar cfz ../lava-server_2016.11.orig.tar.gz . >/dev/null
