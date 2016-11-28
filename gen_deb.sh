@@ -39,7 +39,7 @@ popd
 docker run \
  -it \
  --rm \
- -v$PWD/build:/package \
+ --volume $PWD/build:/package \
  build-lava-on-debian \
  /bin/bash -e -c \
  "cd /package/src; \
