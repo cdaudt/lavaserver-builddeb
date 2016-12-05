@@ -23,6 +23,6 @@ RUN \
   python-mocker \
   python-setuptools \
   python-yaml \
-  git
-
-
+  git \
+  docbook-xsl \
+  xsltproc

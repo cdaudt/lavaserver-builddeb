@@ -1,5 +1,5 @@
-### Deb generator for lava server
-This is a simple script that uses docker to generate the deb files for lava-server
+### Deb generator for lavapdu-daemon
+This is a simple script that uses docker to generate the deb files for lavapdu
 It starts from 2 git repos, one for the sources and one for the package info
 
 ### Usage
@@ -13,10 +13,8 @@ For example, to build from the linaro sources in github:
 
 This will generate the following deb files in the *build* subdirectory:
 ````
-lava_2016.11-1_all.deb
-lava-dev_2016.11-1_all.deb
-lava-server_2016.11-1_all.deb
-lava-server-doc_2016.11-1_all.deb
+lavapdu-client_0.0.5-2_all.de
+lavapdu-daemon_0.0.5-2_all.de
 ````
 Please note that it leaves files strewn around with root ownership as a side-effect of the build, so you need sudo access to clear it out.
 

@@ -30,7 +30,7 @@ pushd build
     git clone -b ${SRC_BRANCH} ${SRC_REPO} src
   fi
   pushd src
-    tar cfz ../lava-server_2016.11.orig.tar.gz . >/dev/null
+    tar cfz ../lavapdu_0.0.5.orig.tar.gz . >/dev/null
     mv ../pkg/debian debian 
   popd
 popd
